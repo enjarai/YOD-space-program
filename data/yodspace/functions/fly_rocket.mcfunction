@@ -7,4 +7,4 @@ particle minecraft:flame ~ ~-4 ~ 0.5 0.5 0.5 0 5 force
 
 scoreboard players set @e[tag=rocket,scores={rockettimeout=10..}] rockettimeout 0
 
-execute positioned ~ 200 ~ run kill @s[distance=2..]
+execute positioned ~ 200 ~ run kill @s[distance=..2]
