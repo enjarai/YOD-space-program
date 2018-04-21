@@ -9,10 +9,13 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:coal",Count:1b}}] at @s if bloc
 execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocket
 
 #generate space
+scoreboard objectives add gencount dummy
 #/summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~-16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~-16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s run fill ~ 85 ~ ~16 0 ~16 air
+execute as @e[tag=spacegen,tag=!completed] at @s run scoreboard players add #gencount gencount 1
+execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 10 as @e[sort=random,limit=1,tag=spacegen,distance=..33] at @s run function yodspace:generate
 tag @e[tag=spacegen,tag=!completed] add completed
