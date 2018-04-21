@@ -10,9 +10,9 @@ execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocke
 
 #generate space
 #/summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
-execute as @e[tag=spacegen,tag=!completed] at @s positioned ~16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
-execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
-execute as @e[tag=spacegen,tag=!completed] at @s positioned ~-16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
-execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~-16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
+execute as @e[tag=spacegen] at @s positioned ~16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
+execute as @e[tag=spacegen] at @s positioned ~ ~ ~16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
+execute as @e[tag=spacegen] at @s positioned ~-16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
+execute as @e[tag=spacegen] at @s positioned ~ ~ ~-16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s run fill ~ 85 ~ ~16 0 ~16 air
-execute as @e[tag=spacegen,tag=!completed] at @s positioned ~16 ~ ~ if entity @e[tag=spacegen,distance=..1] positioned ~ ~ ~16 if entity @e[tag=spacegen,distance=..1] positioned ~-16 ~ ~ if entity @e[tag=spacegen,distance=..1] positioned ~ ~ ~-16 if entity @e[tag=spacegen,distance=..1] run tag @s add completed
+tag @e[tag=spacegen,tag=!completed] add completed
