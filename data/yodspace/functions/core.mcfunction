@@ -17,6 +17,6 @@ execute as @e[tag=spacegen,tag=!completed] at @s positioned ~-16 ~ ~ unless enti
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~-16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s run fill ~ 85 ~ ~16 0 ~16 air
 execute as @e[tag=spacegen,tag=!completed] at @s run scoreboard players add #gencount gencount 1
-execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 10.. as @e[sort=random,limit=1,tag=spacegen,distance=..33] at @s run function yodspace:generate
-execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 10.. run scoreboard players set #gencount gencount 0
+execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. as @e[sort=random,limit=1,tag=spacegen,distance=..33] at @s run function yodspace:generate
+execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. run scoreboard players set #gencount gencount 0
 tag @e[tag=spacegen,tag=!completed] add completed
