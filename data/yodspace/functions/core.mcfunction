@@ -14,7 +14,7 @@ execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocke
 execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
 execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
 kill @e[tag=asteroidcrea,type=armor_stand]
-# ^^^ @mika armorstandsarenotpoeple ^^^
+# ^^^ @mika armorstandsarenotpeople ^^^
 
 #generate space
 #/summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
