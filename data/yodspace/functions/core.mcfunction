@@ -1,3 +1,5 @@
+scoreboard objectives add gencount dummy
+
 #show init message
 execute if entity @e[tag=byenjarai,type=armor_stand] run tellraw @a ["",{"text":"[console] ","color":"aqua"},{"text":"This server is running ","color":"gold"},{"selector":"@e[tag=byenjarai,type=armor_stand]","color":"red"},{"text":" by ","color":"gold"},{"text":"Enjarai","color":"red"}]
 kill @e[tag=byenjarai,type=armor_stand]
@@ -9,13 +11,13 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:coal",Count:1b}}] at @s if bloc
 execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocket
 
 #stuff to do with asteroid generation
-execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
-execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
-kill @e[tag=asteroidcrea,type=armor_stand]
+execute as @e[tag=asteroidcrea,scores={gencount=1..}] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
+execute as @e[tag=asteroidcrea,scores={gencount=1..}] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
+kill @e[tag=asteroidcrea,type=armor_stand,scores={gencount=1..}]
+scoreboard players add @e[tag=asteroidcrea] gencount 1
 # ^^^ @mika armorstandsarenotpoeple ^^^
 
 #generate space
-scoreboard objectives add gencount dummy
 #/summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~16 ~ ~ unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
 execute as @e[tag=spacegen,tag=!completed] at @s positioned ~ ~ ~16 unless entity @e[tag=spacegen,distance=..1] run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
