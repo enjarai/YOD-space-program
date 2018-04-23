@@ -11,10 +11,9 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:coal",Count:1b}}] at @s if bloc
 execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocket
 
 #stuff to do with asteroid generation
-execute as @e[tag=asteroidcrea,scores={gencount=1..}] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
-execute as @e[tag=asteroidcrea,scores={gencount=1..}] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
-kill @e[tag=asteroidcrea,type=armor_stand,scores={gencount=1..}]
-scoreboard players add @e[tag=asteroidcrea] gencount 1
+execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
+execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
+kill @e[tag=asteroidcrea,type=armor_stand]
 # ^^^ @mika armorstandsarenotpoeple ^^^
 
 #generate space
