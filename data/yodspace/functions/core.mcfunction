@@ -27,7 +27,7 @@ execute as @e[tag=spacegen,tag=!completed] at @s run scoreboard players add #gen
 execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. as @e[sort=random,limit=1,tag=spacegen,distance=..33] at @s run function yodspace:generate
 execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. run scoreboard players set #gencount gencount 0
 tag @e[tag=spacegen,tag=!completed,tag=!new] add completed
-tag @e[tag=spacegen,tag=!new] add new
+tag @e[tag=spacegen,tag=new] remove new
 
 #aserroid gen detect
 execute as @e[tag=placeasteroid] at @s run function yodspace:generateblob
