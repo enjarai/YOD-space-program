@@ -9,3 +9,5 @@ execute if entity @e[tag=genheight,tag=1,tag=pick] run setblock ~ ~75 ~ minecraf
 execute if entity @e[tag=genheight,tag=2,tag=pick] run setblock ~ ~100 ~ minecraft:mob_spawner{RequiredPlayerRange:1000,SpawnData:{id:"minecraft:armor_stand",NoGravity:1b,Tags:["placeasteroid"]}} replace
 execute if entity @e[tag=genheight,tag=3,tag=pick] run setblock ~ ~125 ~ minecraft:mob_spawner{RequiredPlayerRange:1000,SpawnData:{id:"minecraft:armor_stand",NoGravity:1b,Tags:["placeasteroid"]}} replace
 execute if entity @e[tag=genheight,tag=4,tag=pick] run setblock ~ ~150 ~ minecraft:mob_spawner{RequiredPlayerRange:1000,SpawnData:{id:"minecraft:armor_stand",NoGravity:1b,Tags:["placeasteroid"]}} replace
+
+kill @e[tag=genheight,sort=nearest,limit=4]
