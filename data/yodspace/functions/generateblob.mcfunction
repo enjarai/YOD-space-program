@@ -9,6 +9,6 @@
 #kill @e[tag=strucgen]
 #setblock ~ ~126 ~ redstone_block
 
-execute as @e[tag=test1] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 glass replace air
-execute as @e[tag=test1] at @s run summon tnt ~ ~ ~
-execute as @e[tag=test1] at @s run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["asteroidcrea"]}
+execute as @s at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 glass replace air
+execute as @s at @s run summon tnt ~ ~ ~
+execute as @s at @s run summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["asteroidcrea"]}
