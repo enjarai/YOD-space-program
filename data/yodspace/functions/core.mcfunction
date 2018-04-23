@@ -28,6 +28,6 @@ execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount mat
 execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. run scoreboard players set #gencount gencount 0
 tag @e[tag=spacegen,tag=!completed] add completed
 
-#testing stuff can be ignored
-execute as @e[tag=place] at @s run function yodspace:generateblob
-kill @e[tag=place]
+#aserroid gen detect
+execute as @e[tag=placeasteroid] at @s run function yodspace:generateblob
+kill @e[tag=placeasteroid]
