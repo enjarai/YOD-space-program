@@ -8,6 +8,12 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:coal",Count:1b}}] at @s if bloc
 #make rocket fly
 execute as @e[type=armor_stand,tag=rocket] at @s run function yodspace:fly_rocket
 
+#stuff to do with asteroid generation
+execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone replace air
+execute as @e[tag=asteroidcrea] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace glass
+kill @e[tag=asteroidcrea,type=armor_stand]
+# ^^^ @mika armorstandsarenotpoeple ^^^
+
 #generate space
 scoreboard objectives add gencount dummy
 #/summon armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["spacegen"]}
@@ -20,3 +26,4 @@ execute as @e[tag=spacegen,tag=!completed] at @s run scoreboard players add #gen
 execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. as @e[sort=random,limit=1,tag=spacegen,distance=..33] at @s run function yodspace:generate
 execute as @e[tag=spacegen,tag=!completed] at @s if score #gencount gencount matches 100.. run scoreboard players set #gencount gencount 0
 tag @e[tag=spacegen,tag=!completed] add completed
+
